@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/styles/variables';
+
+.overflow-auto {
+  overflow: auto;
+}
+.absolute {
+  position: absolute;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: cruise, "Helvetica Neue", sans-serif; }
+
+.height--100 {
+  height: 100%;
+}
+.padding-1rem {
+  padding: 1rem;
+}
+.margin-h-1rem {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.align-self-center {
+  align-self: center;
+}
+
+button {
+  display: inline-flex;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background-color: $btnColorPrimary;
+  margin: 5px;
+  align-items: center;
+  color: #FFFFFF;
+  padding: 3px 10px;
+  cursor: pointer;
+  height: 30px;
+  &:hover {
+    background-color: $btnColorPrimaryHover;
+  }
+
+  &.deny-button {
+    .iconfont {
+      font-size: 14px;
+      margin-right: 8px;
+    }
+  }
+
+  &.cancel-button {
+    background-color: $btnColorCancel;
+
+    &:hover {
+      background-color: $btnColorCancelHover;
+    }
+  }
+}

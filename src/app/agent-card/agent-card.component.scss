@@ -1,0 +1,44 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 80px 80px;
+  grid-template-areas: 'icon info info info info info info'
+                        'icon resource resource resource resource resource action';
+}
+.icon {
+  grid-area: icon;
+}
+.info {
+  grid-area: info;
+  display: grid;
+  grid-template-columns: 1.3fr .7fr repeat(2, 1fr);
+  place-items: center;
+}
+.add-btn {
+  padding: 3px 4px;
+  i {
+    font-size: 18px;
+  }
+}
+.resource {
+  grid-area: resource;
+}
+.action {
+  grid-area: action;
+}
+.button-deny {
+  height: 30px;
+  //Override mat-button line-height to achieve alignment
+  line-height: 30px;
+  background-color: #00B4CF;
+  color: white;
+}
+.icon-deny {
+  font-size: 14px;
+}
+.icon-trash {
+  font-size: 16px;
+}
+.button-resource-item {
+  background-color: #E1E4E6;
+}

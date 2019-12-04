@@ -1,0 +1,32 @@
+.agent-container {
+  grid-row-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 120px 60px 1fr;
+  grid-template-areas:
+    "summary summary statistics"
+    "toolbar toolbar toolbar"
+    "list list list";
+  place-content: space-around;
+}
+.summary {
+  grid-area: summary;
+}
+.statistics {
+  grid-area: statistics;
+}
+.toolbar {
+  grid-area: toolbar;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+.list {
+  grid-area: list;
+}
+:host .mat-button-toggle-group{
+  border: none;
+}
+:host .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+  border: none;
+}

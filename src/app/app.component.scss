@@ -1,0 +1,31 @@
+$a: 100vh;
+$b: 90px;
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: red;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: yellow;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px calc(#{$a} - #{$b}) 30px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
