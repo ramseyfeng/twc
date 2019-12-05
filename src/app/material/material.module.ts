@@ -16,7 +16,6 @@ import {
   MatButtonToggleModule,
   MatDialogModule
 } from '@angular/material';
-import {DomSanitizer} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 
 const materials = [

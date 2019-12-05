@@ -18,13 +18,12 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { AgentToolbarComponent } from './agent-toolbar/agent-toolbar.component';
 import { FilterTabsComponent } from './filter-tabs/filter-tabs.component';
 import { IconsFilterComponent } from './icons-filter/icons-filter.component';
-import { SearchTextInputComponent } from './shared/search-text-input/search-text-input.component';
 import { AgentListComponent } from './agent-list/agent-list.component';
 import { AgentCardComponent } from './agent-card/agent-card.component';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryAgentsService} from './agent/in-memory-agents.service';
 import { AddResourceDialogComponent } from './add-resource-dialog/add-resource-dialog.component';
-import {FormsModule} from '@angular/forms';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import {FormsModule} from '@angular/forms';
     AgentToolbarComponent,
     FilterTabsComponent,
     IconsFilterComponent,
-    SearchTextInputComponent,
     AgentListComponent,
     AgentCardComponent,
     AddResourceDialogComponent
@@ -54,7 +52,7 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule,
+    SharedModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryAgentsService),
   ],
   providers: [],
