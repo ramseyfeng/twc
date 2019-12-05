@@ -1,12 +1,16 @@
+@import 'styles/variables';
 $a: 100vh;
 $b: 90px;
 
 .header {
   grid-area: header;
+  z-index: 1;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, .1);
 }
 
 .main {
   grid-area: main;
+  background-color: $pageBgColor;
 }
 
 .sidebar {
@@ -16,14 +20,30 @@ $b: 90px;
 
 .footer {
   grid-area: footer;
-  background-color: yellow;
+  z-index: 1;
+  background-color: #FFFFFF;
+  box-shadow: 1px -4px 10px rgba(0, 0, 0, .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container {
+/*.container-v {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 60px calc(#{$a} - #{$b}) 30px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}*/
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: $headerHeight calc(#{100vh} - #{$headerHeight} - #{$footerHeight}) $footerHeight ;
+  grid-template-columns: 1fr;
   grid-template-areas:
     "header"
     "main"

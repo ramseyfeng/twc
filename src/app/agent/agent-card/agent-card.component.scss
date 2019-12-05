@@ -1,9 +1,12 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 80px 80px;
+  grid-template-rows: repeat(2, 55px);
   grid-template-areas: 'icon info info info info info info'
                         'icon resource resource resource resource resource action';
+  background-color: white;
+  margin: 10px;
+  padding: 0px 10px;
 }
 .icon {
   grid-area: icon;

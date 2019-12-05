@@ -1,10 +1,10 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {Agent} from '../agent/Agent';
 import {AgentService} from '../agent.service';
 import {MatDialog} from '@angular/material';
 import {AddResourceDialogComponent} from '../add-resource-dialog/add-resource-dialog.component';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {IAgent} from '../agent';
 
 @Component({
   selector: 'app-agent-card',
@@ -15,7 +15,7 @@ export class AgentCardComponent implements OnInit, OnDestroy {
 
   private unsubscribe: Subject<void> = new Subject();
 
-  @Input() agent: Agent;
+  @Input() agent: IAgent;
   resourceStr: string;
 
   constructor(private agentSvc: AgentService, private dialog: MatDialog) {

@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-import {ResourceDialogData} from '../agent/ResourceDialogData';
+import {ResourceDialogData} from '../resource-dialog-data';
 
 @Component({
   selector: 'app-add-resource-dialog',
@@ -9,7 +9,7 @@ import {ResourceDialogData} from '../agent/ResourceDialogData';
 })
 export class AddResourceDialogComponent implements OnInit {
 
-  constructor(private dialog: MatDialogRef<AddResourceDialogComponent>, @Inject(MAT_DIALOG_DATA) private data: ResourceDialogData) {
+  constructor(private dialog: MatDialogRef<AddResourceDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: ResourceDialogData) {
   }
 
   ngOnInit() {

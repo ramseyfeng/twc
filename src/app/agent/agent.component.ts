@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {AgentService} from '../agent.service';
-import {Agent} from './Agent';
+import {IAgent} from './agent';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
+import {AgentService} from './agent.service';
 
 @Component({
   selector: 'app-agent',
@@ -11,15 +11,15 @@ import {Subject} from 'rxjs';
 })
 export class AgentComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
-  private agents: Agent[];
-  filteredAgents: Agent[];
+  private agents: IAgent[];
+  filteredAgents: IAgent[];
 
   constructor(private agentSvc: AgentService) {
   }
 
   ngOnInit() {
     this.agentSvc.getAgents().pipe(takeUntil(this.unsubscribe)).subscribe({
-      next: (data: Agent[]) => {
+      next: (data: IAgent[]) => {
         this.agents = data;
         this.filteredAgents = data;
       }
@@ -29,7 +29,7 @@ export class AgentComponent implements OnInit, OnDestroy {
   searchTextChanged($event: string) {
     const filterBy = $event.toLocaleLowerCase();
     this.filteredAgents = filterBy === '' ?
-      this.agents : this.agents.filter((agent: Agent) => agent.name.toLocaleLowerCase().includes(filterBy));
+      this.agents : this.agents.filter((agent: IAgent) => agent.name.toLocaleLowerCase().includes(filterBy));
   }
 
   filterAgentsByType(type: string) {
@@ -37,7 +37,7 @@ export class AgentComponent implements OnInit, OnDestroy {
       this.filteredAgents = this.agents;
       return;
     }
-    this.filteredAgents = this.agents.filter((agent: Agent) => agent.type === type);
+    this.filteredAgents = this.agents.filter((agent: IAgent) => agent.type === type);
   }
 
   ngOnDestroy(): void {

@@ -1,33 +1,23 @@
-<mat-sidenav-container class="height--100">
-  <mat-sidenav #sidenav opened mode="side">
-    <mat-nav-list>
-      <a
-        mat-list-item
-        [routerLink]="'/dash-board'"
-      >
-        DASHBOARD
-      </a>
-      <a
-        mat-list-item
-        [routerLink]="'/agent'"
-      >
-        AGENT
-      </a>
-      <a
-        mat-list-item
-        [routerLink]="'/my-cruise'"
-      >
-        My CRUISE
-      </a>
-      <a
-        mat-list-item
-        [routerLink]="'/help'"
-      >
-        HELP
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
+<div class="wrapper">
+  <div class="sidebar">
+    <div class="menu-wrapper">
+      <ul class="nav-menu">
+        <li>
+          <a [routerLink]="'/dash-board'" class="menu-item">
+            <i class="menu-icon icon-dashboard"></i>
+            <span class="menu-label">DASHBOARD</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="'/agent'" class="menu-item">
+            <i class="menu-icon icon-sitemap"></i>
+            <span class="menu-label">AGENT</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content overflow-auto">
     <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
+</div>

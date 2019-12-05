@@ -1,4 +1,4 @@
-export interface Agent {
+export interface IAgent {
   id: number;
   type: string;
   os: string;
