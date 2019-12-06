@@ -28,6 +28,14 @@ a {
   text-decoration: none;
 }
 
+.icon-font--sm {
+  font-size: $iconSmall;
+}
+
+.icon-font--md {
+  font-size: $iconMedium;
+}
+
 button {
   display: inline-flex;
   font-size: 14px;
@@ -45,7 +53,7 @@ button {
   }
 
   &.deny-button {
-    .iconfont {
+    .icon-font {
       font-size: 14px;
       margin-right: 8px;
     }

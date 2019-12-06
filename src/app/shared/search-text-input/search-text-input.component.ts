@@ -4,7 +4,8 @@ import {debounceTime, distinctUntilChanged} from 'rxjs/operators';
 
 @Component({
   selector: 'app-search-text-input',
-  templateUrl: './search-text-input.component.html'
+  templateUrl: './search-text-input.component.html',
+  styleUrls: ['./search-text-input.component.scss']
 })
 export class SearchTextInputComponent implements OnInit, OnDestroy {
 

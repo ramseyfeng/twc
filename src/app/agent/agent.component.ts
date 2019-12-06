@@ -3,6 +3,7 @@ import {IAgent} from './agent';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 import {AgentService} from './agent.service';
+import {ISummary} from './summary';
 
 @Component({
   selector: 'app-agent',
@@ -13,6 +14,7 @@ export class AgentComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
   private agents: IAgent[];
   filteredAgents: IAgent[];
+  summaryData: ISummary[];
 
   constructor(private agentSvc: AgentService) {
   }
@@ -22,8 +24,30 @@ export class AgentComponent implements OnInit, OnDestroy {
       next: (data: IAgent[]) => {
         this.agents = data;
         this.filteredAgents = data;
+        this.summaryData = this.extractSummaryData(data);
       }
     });
+  }
+
+  private extractSummaryData(agents: IAgent[]): ISummary[] {
+    const statusCounterMap = {};
+    const summaryList = [];
+    agents.forEach(agent => {
+      if (statusCounterMap[agent.status] === undefined) {
+        statusCounterMap[agent.status] = 1;
+      } else {
+        statusCounterMap[agent.status] = statusCounterMap[agent.status] + 1;
+      }
+    });
+    Object.keys(statusCounterMap).forEach(
+      (status) => {
+        return summaryList.push({
+          status,
+          count: statusCounterMap[status]
+        });
+      }
+    );
+    return summaryList;
   }
 
   searchTextChanged($event: string) {

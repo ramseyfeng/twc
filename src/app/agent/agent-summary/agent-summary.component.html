@@ -1,20 +1,9 @@
-<div fxLayout="row" class="height--100" fxLayoutAlign="space-around space-around">
-  <div class="relative container margin-h-1rem" fxFlex>
-    <div fxFill fxLayoutAlign="center center" class="absolute">
-      <i class="icon-cog status-icon animation-rotating"></i>
-    </div>
-    <div class="card-wrapper">
-      <div class="status-label">Building</div>
-      <div class="status-count">6</div>
-    </div>
+<div class="relative container" fxFlex>
+  <div fxFill fxLayoutAlign="center center" class="absolute">
+    <i class="icon-cog status-icon animation-rotating"></i>
   </div>
-  <div class="relative container margin-h-1rem" fxFlex>
-    <div fxFill fxLayoutAlign="center center" class="absolute">
-      <i class="icon-cog status-icon"></i>
-    </div>
-    <div class="card-wrapper">
-      <div class="status-label">Building</div>
-      <div class="status-count">6</div>
-    </div>
+  <div class="card-wrapper status-{{summary?.status}}">
+    <div class="status-label">{{summary?.status}}</div>
+    <div class="status-count">{{summary?.count}}</div>
   </div>
 </div>

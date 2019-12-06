@@ -1,5 +1,6 @@
+@import '../../styles/variables';
+
 .container {
-  background-color: #FF9A2A;
   overflow: hidden;
 }
 
@@ -41,6 +42,13 @@
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 'status-label .' '. status-count';
+
+  &.status-building {
+    background-color: $orangeColor;
+  }
+  &.status-idle {
+    background-color: $greenColor;
+  }
 }
 
 .status-label {

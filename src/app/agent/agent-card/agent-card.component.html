@@ -1,10 +1,10 @@
-<div class="wrapper margin-h-1rem">
-  <div class="icon align-self-center">
+<div class="wrapper">
+  <div class="server-img">
     <img src="../../assets/os-icons/windows.png">
   </div>
   <div class="info">
     <div class="info-name">{{agent.name}}</div>
-    <div class="info-status">{{agent.status}}</div>
+    <div class="status info-status-{{agent.status}}">{{agent.status}}</div>
     <div class="info-ip">{{agent.ip}}</div>
     <div class="info-path">{{agent.path}}</div>
   </div>
@@ -13,14 +13,14 @@
       <button class="add-btn" (click)="addResourceDialog()">
         <i class="icon-plus"></i>
       </button>
-      <button *ngFor="let resource of agent.resources" mat-button class="button-resource-item" (click)="deleteResource(resource)">
-        {{resource}}
-        <i class="icon-trash"></i>
+      <button *ngFor="let resource of agent.resources" class="button-resource-item" (click)="deleteResource(resource)">
+        <span class="btn-label">{{resource}}</span>
+        <i class="btn-icon icon-trash"></i>
       </button>
     </div>
   </div>
   <div class="action">
-    <button mat-button class="button-deny">
+    <button class="btn-deny">
       <i class="icon-deny"></i>
       Deny
     </button>

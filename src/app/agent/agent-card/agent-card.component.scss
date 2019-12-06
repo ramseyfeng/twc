@@ -1,47 +1,73 @@
+@import '../../styles/variables';
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 55px);
-  grid-template-areas: 'icon info info info info info info'
-                        'icon resource resource resource resource resource action';
+  grid-template-areas: 'server-img info info info info info info'
+                        'server-img resource resource resource resource resource action';
   background-color: white;
-  margin: 10px;
-  padding: 0px 10px;
+  margin-bottom: $agentSectionsGap;
 }
-.icon {
-  grid-area: icon;
+
+.server-img {
+  grid-area: server-img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .info {
   grid-area: info;
   display: grid;
   grid-template-columns: 1.3fr .7fr repeat(2, 1fr);
   place-items: center;
+  .status {
+    padding: .1rem .5rem;
+    color: $menuTextDefault;
+  }
+  .info-status-idle {
+    background-color: $greenColor;
+  }
+  .info-status-building {
+    background-color: $orangeColor;
+  }
 }
+
 .add-btn {
-  padding: 3px 4px;
-  i {
+  .icon-plus {
+    padding: 3px 4px;
     font-size: 18px;
   }
 }
+
 .resource {
   grid-area: resource;
 }
+
 .action {
   grid-area: action;
 }
-.button-deny {
+
+.btn-deny {
   height: 30px;
-  //Override mat-button line-height to achieve alignment
-  line-height: 30px;
   background-color: #00B4CF;
   color: white;
+  .icon-deny {
+    font-size: 14px;
+    margin-right: .5rem;
+  }
 }
-.icon-deny {
-  font-size: 14px;
-}
+
+
 .icon-trash {
   font-size: 16px;
 }
+
 .button-resource-item {
-  background-color: #E1E4E6;
+  background-color: $resourceBtnBgColor;
+
+  .btn-label, .btn-icon {
+    color: $btnColorCancelHover;
+  }
 }

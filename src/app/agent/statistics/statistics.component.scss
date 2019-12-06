@@ -5,10 +5,11 @@
   grid-template-rows: 1fr 1fr;
   background-color: white;
   place-items: center;
-}
-.header {
-  font: 12px bold;
-}
-.val {
-  font: 20px bolder;
+  .header {
+    font: 12px bold;
+    text-transform: uppercase;
+  }
+  .count {
+    font: 20px bolder;
+  }
 }

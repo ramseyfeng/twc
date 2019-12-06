@@ -1,23 +1,21 @@
 <div class="agent-container">
-  <app-agent-summary class="summary">SummaryA</app-agent-summary>
-  <app-statistics class="statistics">Statistics</app-statistics>
+  <div class="overview" fxLayout="row" fxLayoutAlign="space-between">
+    <app-agent-summary class="summary overview-item" *ngFor="let summarySectionData of summaryData" [summary]="summarySectionData"></app-agent-summary>
+    <app-statistics class="statistics overview-item">Statistics</app-statistics>
+  </div>
   <div class="toolbar">
-    <mat-button-toggle-group fxLayout="row" class="margin-h-1rem" (change)="filterAgentsByType($event.value)">
-      <mat-button-toggle value="all" fxFlex>All</mat-button-toggle>
-      <mat-button-toggle value="physical" fxFlex>Physical</mat-button-toggle>
-      <mat-button-toggle value="virtual" fxFlex>Virtual</mat-button-toggle>
-    </mat-button-toggle-group>
-    <div class="margin-h-1rem">
+    <div class="filter-tabs" fxLayout="row">
+      <div class="tab-item active"><span class="nav-tab-item-label">all</span></div>
+      <div class="tab-item "><span class="nav-tab-item-label">physical</span></div>
+      <div class="tab-item "><span class="nav-tab-item-label">virtual</span></div>
+    </div>
+    <div fxFlex>
       <app-search-text-input (textChanged)="searchTextChanged($event)"></app-search-text-input>
     </div>
-    <mat-button-toggle-group #group="matButtonToggleGroup" fxLayoutAlign="end center">
-      <mat-button-toggle value="left" aria-label="Text align left">
-        <i class="icon-th-list"></i>
-      </mat-button-toggle>
-      <mat-button-toggle value="center" aria-label="Text align center">
-        <i class="icon-th-card"></i>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
+    <div class="filter-icons" fxLayout="row" fxLayoutAlign="center center">
+      <div class="icon-font--md filter-icon icon-th-card"></div>
+      <div class="icon-font--md filter-icon icon-th-list active"></div>
+    </div>
   </div>
   <app-agent-list class="list" [agents]="filteredAgents">Agent List</app-agent-list>
 </div>

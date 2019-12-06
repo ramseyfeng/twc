@@ -14,6 +14,11 @@ import {IAgent} from '../agent';
 export class AgentCardComponent implements OnInit, OnDestroy {
 
   private unsubscribe: Subject<void> = new Subject();
+  public statusConstants = {
+    idle: {
+      class: 'class-idle'
+    }
+  };
 
   @Input() agent: IAgent;
   resourceStr: string;
