@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .dropdown-content {
+    display: none;
+    padding: 5px 0px;
+    position: absolute;
+    top: $avatarHeight;
+    right: $avatarHeight / 2;
+    background-color: $menuTextDefault;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    .menu-item {
+      color: black;
+      padding: 12px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: $menuBgColor;
+      i {
+        width: 20px;
+        margin-right: 1rem;
+      }
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+    .dropbtn {
+      background-color: $resourceBtnBgColor;
+    }
+  }
+  .avatar {
+    border-radius: 50%;
+    width: $avatarHeight;
+  }
+}

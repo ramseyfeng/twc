@@ -1,6 +1,6 @@
-<div class="relative container" fxFlex>
+<div class="relative summary-status-{{summary?.status}}" fxFlex>
   <div fxFill fxLayoutAlign="center center" class="absolute">
-    <i class="icon-cog status-icon animation-rotating"></i>
+    <i class="status-icon" [ngClass]="{'icon-cog': summary.status === 'building', 'icon-coffee': summary.status === 'idle'}"></i>
   </div>
   <div class="card-wrapper status-{{summary?.status}}">
     <div class="status-label">{{summary?.status}}</div>

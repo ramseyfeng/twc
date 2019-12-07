@@ -3,19 +3,10 @@
     <app-agent-summary class="summary overview-item" *ngFor="let summarySectionData of summaryData" [summary]="summarySectionData"></app-agent-summary>
     <app-statistics class="statistics overview-item">Statistics</app-statistics>
   </div>
-  <div class="toolbar">
-    <div class="filter-tabs" fxLayout="row">
-      <div class="tab-item active"><span class="nav-tab-item-label">all</span></div>
-      <div class="tab-item "><span class="nav-tab-item-label">physical</span></div>
-      <div class="tab-item "><span class="nav-tab-item-label">virtual</span></div>
-    </div>
-    <div fxFlex>
-      <app-search-text-input (textChanged)="searchTextChanged($event)"></app-search-text-input>
-    </div>
-    <div class="filter-icons" fxLayout="row" fxLayoutAlign="center center">
-      <div class="icon-font--md filter-icon icon-th-card"></div>
-      <div class="icon-font--md filter-icon icon-th-list active"></div>
-    </div>
+  <div class="toolbar" fxLayout="row">
+    <app-filter-tabs [tabs]="agentTypes" (tabChanged)="filterAgentsByType($event)"></app-filter-tabs>
+    <app-search-text-input (textChanged)="searchTextChanged($event)" fxFlex></app-search-text-input>
+    <app-filter-icons></app-filter-icons>
   </div>
   <app-agent-list class="list" [agents]="filteredAgents">Agent List</app-agent-list>
 </div>

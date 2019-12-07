@@ -1,14 +1,7 @@
 <div class="masthead height--100 relative" fxLayoutAlign="center center">
   <img class="absolute" src="../../assets/logo/logo.svg" alt="cruise" height="40px">
   <div class="place-holder"></div>
-  <div class="action-menu">
-    <div class="example-button-row">
-      <button mat-mini-fab color="primary" [matMenuTriggerFor]="beforeMenu">Primary</button>
-      <i class="icon-angle-down"></i>
-    </div>
-    <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-  </div>
+
+  <app-user-menu class="user-menu"></app-user-menu>
+
 </div>

@@ -15,11 +15,13 @@ export class AgentComponent implements OnInit, OnDestroy {
   private agents: IAgent[];
   filteredAgents: IAgent[];
   summaryData: ISummary[];
+  agentTypes: string[];
 
   constructor(private agentSvc: AgentService) {
   }
 
   ngOnInit() {
+    this.agentTypes = ['all', 'physical', 'virtual'];
     this.agentSvc.getAgents().pipe(takeUntil(this.unsubscribe)).subscribe({
       next: (data: IAgent[]) => {
         this.agents = data;
@@ -47,7 +49,15 @@ export class AgentComponent implements OnInit, OnDestroy {
         });
       }
     );
-    return summaryList;
+    return summaryList.sort(({status: a}, {status: b}) => {
+      if (a < b) {
+        return -1;
+      }
+      if (b < a) {
+        return 1;
+      }
+      return 0;
+    });
   }
 
   searchTextChanged($event: string) {

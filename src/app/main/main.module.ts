@@ -4,12 +4,14 @@ import {SidebarNavComponent} from './sidebar-nav/sidebar-nav.component';
 import {MainComponent} from './main.component';
 import {SharedModule} from '../shared/shared.module';
 import {AppRoutingModule} from '../app-routing.module';
+import { UserMenuComponent } from './user-menu/user-menu.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     MastheadComponent,
-    SidebarNavComponent
+    SidebarNavComponent,
+    UserMenuComponent
   ],
   exports: [
     MastheadComponent,

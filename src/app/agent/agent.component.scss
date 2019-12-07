@@ -10,28 +10,6 @@
 .overview-item {
   width: 270px;
 }
-.filter-tabs {
-  .tab-item {
-    height: 50px;
-    line-height: 50px;
-    padding: 0 25px;
-    min-width: 80px;
-    cursor: pointer;
-    text-align: center;
-    box-sizing: border-box;
-    text-transform: capitalize;
-    border-right: 1px solid #F3F3F3;
-    border-bottom: 3px solid #FFFFFF;
-  }
-}
-.filter-icons {
-  .filter-icon {
-    padding: 10px;
-    &.active {
-      color: $menuItemHoverColor;
-    }
-  }
-}
 .agent-container {
   grid-row-gap: $agentSectionsGap;
   display: grid;
@@ -40,7 +18,7 @@
     "overview"
     "toolbar"
     "list";
-  place-content: space-around;
+  //place-content: space-around;
 }
 .overview {
   grid-area: overview;
@@ -48,15 +26,9 @@
 .statistics {
   grid-area: statistics;
 }
-/*.toolbar {
-  grid-area: toolbar;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
+
+@media (max-width: 1200px) {
+  .overview-item {
+    flex: 0 1 230px;
+  }
 }
-:host .mat-button-toggle-group{
-  border: none;
-}
-:host .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
-  border: none;
-}*/

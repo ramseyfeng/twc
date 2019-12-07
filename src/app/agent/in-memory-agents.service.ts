@@ -107,7 +107,23 @@ export class InMemoryAgentsService implements InMemoryDbService {
             'Chrome'
           ],
           id: 7
-        }
+        },
+      {
+        name: 'bjstdmngbdr07.thoughtworks.com',
+        os: 'suse',
+        status: 'idle',
+        type: 'physical',
+        ip: '192.168.1.113',
+        location: '/var/lib/cruise-agent',
+        resources: [
+          'Firefox',
+          'Safari',
+          'Ubuntu',
+          'Chrome',
+          'Opera'
+        ],
+        id: 7
+      }
       ];
     return {agents};
   }

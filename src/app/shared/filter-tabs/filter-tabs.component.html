@@ -1,0 +1,5 @@
+<div class="filter-tabs" fxLayout="row">
+  <div *ngFor="let tab of tabs" class="tab-item" (click)="setTab(tab)" [ngClass]="{'active': selectedTab === tab}">
+    <span class="nav-tab-item-label">{{tab}}</span>
+  </div>
+</div>

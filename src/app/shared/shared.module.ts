@@ -4,11 +4,15 @@ import {SearchTextInputComponent} from './search-text-input/search-text-input.co
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from '../material/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {FilterTabsComponent} from './filter-tabs/filter-tabs.component';
+import {FilterIconsComponent} from './filter-icons/filter-icons.component';
 
 
 @NgModule({
   declarations: [
-    SearchTextInputComponent
+    SearchTextInputComponent,
+    FilterTabsComponent,
+    FilterIconsComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +22,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
   exports: [
     CommonModule,
     SearchTextInputComponent,
+    FilterTabsComponent,
+    FilterIconsComponent,
     FormsModule,
     MaterialModule,
     FlexLayoutModule
