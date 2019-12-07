@@ -11,13 +11,15 @@ import {InMemoryAgentsService} from './agent/in-memory-agents.service';
 import {SharedModule} from './shared/shared.module';
 import {AgentModule} from './agent/agent.module';
 import {MainModule} from './main/main.module';
+import { MyCruiseComponent } from './my-cruise/my-cruise.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashBoardComponent,
     HelpComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    MyCruiseComponent
   ],
   imports: [
     BrowserModule,

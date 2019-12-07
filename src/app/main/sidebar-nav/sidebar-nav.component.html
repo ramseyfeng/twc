@@ -1,1 +1,10 @@
-<p>sidebar-nav works!</p>
+<div class="menu-wrapper">
+  <ul class="nav-menu">
+    <li *ngFor="let navItem of navItems">
+      <a [routerLink]="navItem.link" class="menu-item" routerLinkActive="active">
+        <i class="menu-icon {{navItem.icon}}"></i>
+        <span class="menu-label">{{navItem.label}}</span>
+      </a>
+    </li>
+  </ul>
+</div>

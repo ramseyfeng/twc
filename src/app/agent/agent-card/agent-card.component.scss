@@ -3,11 +3,12 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(2, 55px);
+  grid-template-rows: 55px auto;
   grid-template-areas: 'server-img info info info info info info'
                         'server-img resource resource resource resource resource action';
   background-color: white;
   margin-bottom: $agentSectionsGap;
+  padding: 10px 0px;
 }
 
 .server-img {
@@ -43,6 +44,7 @@
 
 .resource {
   grid-area: resource;
+  flex-wrap: wrap;
 }
 
 .action {

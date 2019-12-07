@@ -8,16 +8,14 @@
     <div class="info-ip">{{agent.ip}}</div>
     <div class="info-path">{{agent.path}}</div>
   </div>
-  <div class="resource" >
-    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
-      <button class="add-btn" (click)="addResourceDialog()">
-        <i class="icon-plus"></i>
-      </button>
-      <button *ngFor="let resource of agent.resources" class="button-resource-item" (click)="deleteResource(resource)">
-        <span class="btn-label">{{resource}}</span>
-        <i class="btn-icon icon-trash"></i>
-      </button>
-    </div>
+  <div class="resource" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+    <button class="add-btn" (click)="addResourceDialog()">
+      <i class="icon-plus"></i>
+    </button>
+    <button *ngFor="let resource of agent.resources" class="button-resource-item" (click)="deleteResource(resource)">
+      <span class="btn-label">{{resource}}</span>
+      <i class="btn-icon icon-trash"></i>
+    </button>
   </div>
   <div class="action">
     <button class="btn-deny">

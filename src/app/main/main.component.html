@@ -1,22 +1,5 @@
 <div class="wrapper">
-  <div class="sidebar">
-    <div class="menu-wrapper">
-      <ul class="nav-menu">
-        <li>
-          <a [routerLink]="'/dash-board'" class="menu-item">
-            <i class="menu-icon icon-dashboard"></i>
-            <span class="menu-label">DASHBOARD</span>
-          </a>
-        </li>
-        <li>
-          <a [routerLink]="'/agent'" class="menu-item">
-            <i class="menu-icon icon-sitemap"></i>
-            <span class="menu-label">AGENT</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <app-sidebar-nav class="sidebar" [navItems]="sidebarMenus"></app-sidebar-nav>
   <div class="content overflow-auto">
     <router-outlet></router-outlet>
   </div>

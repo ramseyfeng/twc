@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-nav',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar-nav.component.scss']
 })
 export class SidebarNavComponent implements OnInit {
+  @Input() navItems: any;
 
   constructor() { }
 

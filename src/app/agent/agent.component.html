@@ -1,5 +1,9 @@
 <div class="agent-container">
-  <div class="overview" fxLayout="row" fxLayoutAlign="space-between">
+  <!--<div class="overview" fxLayout="row" fxLayoutAlign="space-between">
+    <app-agent-summary class="summary overview-item" *ngFor="let summarySectionData of summaryData" [summary]="summarySectionData"></app-agent-summary>
+    <app-statistics class="statistics overview-item">Statistics</app-statistics>
+  </div>-->
+  <div class="overview">
     <app-agent-summary class="summary overview-item" *ngFor="let summarySectionData of summaryData" [summary]="summarySectionData"></app-agent-summary>
     <app-statistics class="statistics overview-item">Statistics</app-statistics>
   </div>

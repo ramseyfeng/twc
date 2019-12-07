@@ -7,9 +7,9 @@
   background-color: $menuTextDefault;
   height: 50px;
 }
-.overview-item {
+/*.overview-item {
   width: 270px;
-}
+}*/
 .agent-container {
   grid-row-gap: $agentSectionsGap;
   display: grid;
@@ -22,13 +22,16 @@
 }
 .overview {
   grid-area: overview;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
-.statistics {
-  grid-area: statistics;
-}
+//.statistics {
+//  grid-area: statistics;
+//}
 
-@media (max-width: 1200px) {
+/*@media (max-width: 1200px) {
   .overview-item {
     flex: 0 1 230px;
   }
-}
+}*/

@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+.nav-menu {
+  padding: 0px;
+  list-style: none;
+}
+.menu-item {
+  height: 45px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  color: $menuTextDefault;
+  &:hover, &.active {
+    color: $menuItemHoverColor;
+  }
+}
+.menu-icon {
+  font-size: 20px;
+}
+.menu-label {
+  text-transform: uppercase;
+  margin-left: 10px;
+}
