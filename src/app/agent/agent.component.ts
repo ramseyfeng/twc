@@ -16,6 +16,7 @@ export class AgentComponent implements OnInit, OnDestroy {
   filteredAgents: IAgent[];
   summaryData: ISummary[];
   agentTypes: string[];
+  statisticData: any;
 
   constructor(private agentSvc: AgentService) {
   }
@@ -27,8 +28,38 @@ export class AgentComponent implements OnInit, OnDestroy {
         this.agents = data;
         this.filteredAgents = data;
         this.summaryData = this.extractSummaryData(data);
+        this.statisticData = this.extractStatisticData(data);
       }
     });
+  }
+
+  private groupByProp(list, propKey) {
+    const map = {};
+    list.forEach((item) => {
+      const key = item[propKey];
+      const values = map[key];
+      if (!values) {
+        map[key] = [item];
+      } else {
+        values.push(item);
+      }
+    });
+    return map;
+  }
+
+  private extractStatisticData(data: IAgent[]): any {
+    const agentsByType = this.groupByProp(data, 'type');
+    const results = {};
+    let all = 0;
+
+    Object.keys(agentsByType).forEach(type => {
+      all += agentsByType[type].length;
+      results[type] = agentsByType[type].length;
+    });
+    return {
+      all,
+      ...results
+    };
   }
 
   private extractSummaryData(agents: IAgent[]): ISummary[] {

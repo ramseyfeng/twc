@@ -14,10 +14,15 @@
 }
 .wrapper {
   max-width: 1200px;
-  min-width: 1000px;
   height: calc(100vh - 64px);
   display: grid;
   margin: 0 auto;
   grid-template-columns: $menuWidth 1fr;
   grid-template-areas: 'sidebar content';
+  @media (max-width: 959px) {
+    grid-template-areas: 'content';
+    grid-template-columns: 1fr;
+  }
 }
+
+

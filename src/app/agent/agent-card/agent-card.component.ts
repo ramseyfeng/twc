@@ -14,6 +14,13 @@ import {IAgent} from '../agent';
 export class AgentCardComponent implements OnInit, OnDestroy {
 
   private unsubscribe: Subject<void> = new Subject();
+  osImages = {
+    windows: '/assets/os-icons/windows.png',
+    ubuntu: '/assets/os-icons/ubuntu.png',
+    debian: '/assets/os-icons/debin.png',
+    suse: '/assets/os-icons/suse.png',
+    centos: '/assets/os-icons/cent_os.png'
+  };
   public statusConstants = {
     idle: {
       class: 'class-idle'
@@ -42,7 +49,10 @@ export class AgentCardComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(AddResourceDialogComponent, {
       width: '570px',
       autoFocus: true,
-      data: {name: this.resourceStr}
+      data: {name: this.resourceStr},
+      panelClass: 'custom-dialog-container',
+      disableClose: true,
+      closeOnNavigation: false
     });
 
     dialogRef.afterClosed()

@@ -1,11 +1,7 @@
 <div class="agent-container">
-  <!--<div class="overview" fxLayout="row" fxLayoutAlign="space-between">
-    <app-agent-summary class="summary overview-item" *ngFor="let summarySectionData of summaryData" [summary]="summarySectionData"></app-agent-summary>
-    <app-statistics class="statistics overview-item">Statistics</app-statistics>
-  </div>-->
   <div class="overview">
     <app-agent-summary class="summary overview-item" *ngFor="let summarySectionData of summaryData" [summary]="summarySectionData"></app-agent-summary>
-    <app-statistics class="statistics overview-item">Statistics</app-statistics>
+    <app-statistics class="statistics overview-item" [statistic]="statisticData"></app-statistics>
   </div>
   <div class="toolbar" fxLayout="row">
     <app-filter-tabs [tabs]="agentTypes" (tabChanged)="filterAgentsByType($event)"></app-filter-tabs>

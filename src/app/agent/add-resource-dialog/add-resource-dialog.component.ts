@@ -16,6 +16,6 @@ export class AddResourceDialogComponent implements OnInit {
   }
 
   onNoClick() {
-    this.dialog.close();
+    this.dialog.close('');
   }
 }

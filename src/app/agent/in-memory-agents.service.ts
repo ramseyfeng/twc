@@ -53,7 +53,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           os: 'debian',
           status: 'building',
           type: 'virtual',
-          ip: '192.168.1.102',
+          ip: '192.168.1.106',
           location: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
@@ -67,7 +67,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           name: 'bjstdmngbdr15.thoughtworks.com',
           os: 'suse',
           status: 'idle',
-          type: 'physical',
+          type: 'virtual',
           ip: '192.168.1.110',
           location: '/var/lib/cruise-agent',
           resources: [
@@ -113,7 +113,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
         os: 'suse',
         status: 'idle',
         type: 'physical',
-        ip: '192.168.1.113',
+        ip: '192.168.1.116',
         location: '/var/lib/cruise-agent',
         resources: [
           'Firefox',

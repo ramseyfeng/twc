@@ -1,15 +1,11 @@
-<div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.resources">
-  </mat-form-field>
+<div>
+  <div class="title" fxLayout="row" fxLayoutAlign="default center">
+    <div fxFlex>Separate multiple resource name with commas</div>
+    <span class="icon-close icon-font--md" (click)="onNoClick()"></span>
+  </div>
+  <input class="input" [(ngModel)]="data.resources" placeholder="e.g. Chrome, FireFox">
 </div>
 <div mat-dialog-actions fxLayout="row" fxLayoutGap="20px">
   <button [mat-dialog-close]="data.resources" cdkFocusInitial>Add Resources</button>
-  <button (click)="onNoClick()">Cancel</button>
+  <button (click)="onNoClick()" class="btn-cancel">Cancel</button>
 </div>
-
-
-<!-- Copyright 2019 Google LLC. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license -->

@@ -1,8 +1,8 @@
 <div class="wrapper">
-  <div class="header">ALL</div>
-  <div class="header">PHYSICAL</div>
-  <div class="header">VIRTUAL</div>
-  <div class="count">8</div>
-  <div class="count">4</div>
-  <div class="count">4</div>
+  <div class="header" *ngFor="let header of headers">{{header}}</div>
+<!--  <div class="header">PHYSICAL</div>-->
+<!--  <div class="header">VIRTUAL</div>-->
+  <div class="count" *ngFor="let val of values">{{val}}</div>
+<!--  <div class="count">4</div>-->
+<!--  <div class="count">4</div>-->
 </div>

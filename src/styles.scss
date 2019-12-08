@@ -67,3 +67,22 @@ button {
     }
   }
 }
+
+
+.custom-dialog-container .mat-dialog-container {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .3);
+  border: 1px solid $btnColorPrimary;
+  .btn-cancel {
+    background-color: $btnColorCancel;
+    &:hover {
+      background-color: $btnColorCancelHover;
+    }
+  }
+  .title {
+    margin-bottom: 10px;
+    .btn-x {
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+}
