@@ -1,13 +1,45 @@
-<div class="menu-wrapper" [ngClass.lt-md]="{'hidden': !open, 'abs-sidebar': true}">
-  <div class="action" fxHide fxShow.lt-md="true">
-    <span class="icon-close icon-font--md" (click)="open=false"></span>
+<div class="wrapper" [ngClass]="{'hidden': !open}">
+  <div class="abs-sidebar" fxLayout="column" fxFill>
+    <div class="menu-wrapper" fxFlex>
+      <div class="action">
+        <span class="icon-close icon-font--md" (click)="open=false"></span>
+      </div>
+      <ul class="nav-menu">
+        <li *ngFor="let navItem of navItems">
+          <a [routerLink]="navItem.link" class="menu-item" routerLinkActive="active">
+            <i class="menu-icon {{navItem.icon}}"></i>
+            <span class="menu-label">{{navItem.label}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="history-wrapper" fxFlex="50">
+      <h3 class="title">History</h3>
+      <ul class="history-list">
+        <li class="item">
+          <span class="item-dot"></span>
+          <div>bjstdmngbdr01/Acceptance_test</div>
+        </li>
+        <li class="item"><span class="item-dot"></span>
+          <div class="item-text">bjstdmngbdr02/Acceptance_testAcceptance_test</div>
+        </li>
+        <li class="item"><span class="item-dot"></span>
+          <div>bjstdmngbdr03/Acceptance_test</div>
+        </li>
+        <li class="item"><span class="item-dot"></span>
+          <div>bjstdmngbdr04/Acceptance_test</div>
+        </li>
+        <li class="item"><span class="item-dot"></span>
+          <div>bjstdmngbdr05/Acceptance_test</div>
+        </li>
+        <li class="item"><span class="item-dot"></span>
+          <div>bjstdmngbdr06/Acceptance_test</div>
+        </li>
+        <li class="item"><span class="item-dot"></span>
+          <div>bjstdmngbdr07/Acceptance_test</div>
+        </li>
+      </ul>
+    </div>
+
   </div>
-  <ul class="nav-menu">
-    <li *ngFor="let navItem of navItems">
-      <a [routerLink]="navItem.link" class="menu-item" routerLinkActive="active">
-        <i class="menu-icon {{navItem.icon}}"></i>
-        <span class="menu-label">{{navItem.label}}</span>
-      </a>
-    </li>
-  </ul>
 </div>

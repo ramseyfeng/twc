@@ -6,8 +6,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./sidebar-nav.component.scss']
 })
 export class SidebarNavComponent implements OnInit {
+  @Input() open: boolean;
   @Input() navItems: any;
-  open = false;
 
   constructor() { }
 

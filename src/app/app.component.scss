@@ -42,6 +42,10 @@
 }
 
 .abs-sidebar {
+  display: none;
   position: absolute;
   height: 100%;
+  @media (max-width: $tabletMax) {
+    display: block;
+  }
 }

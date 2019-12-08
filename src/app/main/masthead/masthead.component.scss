@@ -8,6 +8,12 @@
   .user-menu {
     margin-right: 20px;
   }
+  .abs-sidebar-toggle {
+    display: none;
+    @media (max-width: $tabletMax) {
+      display: block;
+    }
+  }
   .icon-navicon {
     padding: 10px;
     margin-left: 10px;

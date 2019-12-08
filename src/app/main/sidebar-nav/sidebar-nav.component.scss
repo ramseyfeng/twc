@@ -1,4 +1,6 @@
 @import '../../styles/variables';
+@import '../../../styles';
+
 .nav-menu {
   padding: 0px;
   list-style: none;
@@ -25,25 +27,61 @@
   display: none;
 }
 
-.abs-sidebar {
-  position: absolute;
-  background-color: $menuBgColor;
+.wrapper {
   width: $menuWidth;
   height: 100%;
-  z-index: 1;
+}
+
+.abs-sidebar {
   .action {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    .icon-close {
-      color: $btnColorPrimary;
-      padding: 10px;
-      margin: 10px;
-      top: 0px;
-      right: 0px;
-      cursor: pointer;
+    display: none;
+  }
+  @media (max-width: $tabletMax) {
+    position: absolute;
+    background-color: $menuBgColor;
+    height: 100%;
+    z-index: 1;
+    .action {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      .icon-close {
+        color: $btnColorPrimary;
+        padding: 10px;
+        margin: 10px;
+        top: 0px;
+        right: 0px;
+        cursor: pointer;
+        &:hover {
+          background-color: $menuHoverBgColor;
+        }
+      }
+    }
+  }
+}
+.history-wrapper {
+  overflow: hidden;
+  .title {
+    font-size: 24px;
+    color: #CCC;
+    padding-left: 1rem;
+    font-weight: 100;
+  }
+  .history-list {
+    max-height: 260px;
+    margin-left: -10px;
+    margin-top: 15px;
+    overflow-y: auto;
+    list-style: outside;
+    .item {
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 10px;
+      .item-text {
+        @include ellipsis;
+      }
       &:hover {
-        background-color: $menuHoverBgColor;
+        color: $btnColorPrimary;
       }
     }
   }

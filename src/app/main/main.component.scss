@@ -7,6 +7,9 @@
 .sidebar {
   grid-area: sidebar;
   background-color: $menuBgColor;
+  @media (max-width: $tabletMax) {
+    display: none;
+  }
 }
 .content {
   grid-area: content;
@@ -19,7 +22,7 @@
   margin: 0 auto;
   grid-template-columns: $menuWidth 1fr;
   grid-template-areas: 'sidebar content';
-  @media (max-width: 959px) {
+  @media (max-width: $tabletMax) {
     grid-template-areas: 'content';
     grid-template-columns: 1fr;
   }
