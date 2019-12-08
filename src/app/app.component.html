@@ -1,5 +1,6 @@
 <div class="container">
-  <app-masthead class="header"></app-masthead>
+  <app-masthead class="header" (menuToggled)="absMenu.toggle()"></app-masthead>
+  <app-sidebar-nav class="abs-sidebar" [navItems]="sidebarMenus" fxHide fxShow.lt-md="true" #absMenu></app-sidebar-nav>
   <app-main class="main">Content</app-main>
   <footer class="footer">
     © Copyright 2017 ThoughtWorks

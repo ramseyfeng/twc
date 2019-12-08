@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-masthead',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./masthead.component.scss']
 })
 export class MastheadComponent implements OnInit {
-
-  constructor() { }
+  @Output() menuToggled = new EventEmitter();
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  toggleMenu() {
+    this.menuToggled.emit();
+  }
 }

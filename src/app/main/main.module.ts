@@ -15,7 +15,8 @@ import { UserMenuComponent } from './user-menu/user-menu.component';
   ],
   exports: [
     MastheadComponent,
-    MainComponent
+    MainComponent,
+    SidebarNavComponent
   ],
   imports: [
     AppRoutingModule,

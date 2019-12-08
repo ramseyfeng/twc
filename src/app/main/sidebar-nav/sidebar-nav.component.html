@@ -1,4 +1,7 @@
-<div class="menu-wrapper">
+<div class="menu-wrapper" [ngClass.lt-md]="{'hidden': !open, 'abs-sidebar': true}">
+  <div class="action" fxHide fxShow.lt-md="true">
+    <span class="icon-close icon-font--md" (click)="open=false"></span>
+  </div>
   <ul class="nav-menu">
     <li *ngFor="let navItem of navItems">
       <a [routerLink]="navItem.link" class="menu-item" routerLinkActive="active">

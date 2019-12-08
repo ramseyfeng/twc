@@ -11,10 +11,12 @@
   background-color: $pageBgColor;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background-color: red;
-}
+/*.abs-sidebar {
+  position: absolute;
+  background-color: $menuBgColor;
+  width: $menuWidth;
+  height: 100%;
+}*/
 
 .footer {
   grid-area: footer;
@@ -37,4 +39,9 @@
     "header"
     "main"
     "footer";
+}
+
+.abs-sidebar {
+  position: absolute;
+  height: 100%;
 }

@@ -12,6 +12,7 @@ import {SharedModule} from './shared/shared.module';
 import {AgentModule} from './agent/agent.module';
 import {MainModule} from './main/main.module';
 import { MyCruiseComponent } from './my-cruise/my-cruise.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,11 @@ import { MyCruiseComponent } from './my-cruise/my-cruise.component';
     SharedModule,
     MainModule,
     AgentModule,
+    FlexLayoutModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryAgentsService),
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 <div class="masthead height--100 relative" fxLayoutAlign="center center">
   <img class="absolute" src="../../assets/logo/logo.svg" alt="cruise" height="40px">
+  <div fxHide fxShow.lt-md="true">
+    <span class="icon-navicon icon-font--md" (click)="toggleMenu()"></span>
+  </div>
   <div class="place-holder"></div>
 
   <app-user-menu class="user-menu"></app-user-menu>

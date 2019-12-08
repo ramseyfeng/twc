@@ -20,3 +20,31 @@
   text-transform: uppercase;
   margin-left: 10px;
 }
+
+.hidden {
+  display: none;
+}
+
+.abs-sidebar {
+  position: absolute;
+  background-color: $menuBgColor;
+  width: $menuWidth;
+  height: 100%;
+  z-index: 1;
+  .action {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .icon-close {
+      color: $btnColorPrimary;
+      padding: 10px;
+      margin: 10px;
+      top: 0px;
+      right: 0px;
+      cursor: pointer;
+      &:hover {
+        background-color: $menuHoverBgColor;
+      }
+    }
+  }
+}

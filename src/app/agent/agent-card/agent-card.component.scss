@@ -23,9 +23,13 @@
   display: grid;
   grid-template-columns: 1.3fr .7fr repeat(2, 1fr);
   place-items: center;
+  font-size: 14px;
+  justify-items: flex-start;
   .status {
     padding: .1rem .5rem;
     color: $menuTextDefault;
+    line-height: initial;
+    margin-left: 10px;
   }
   .info-status-idle {
     background-color: $greenColor;
