@@ -15,7 +15,7 @@ export class AgentService {
 
   getAgents(): Observable<IAgent[]> {
     return this.http.get<IAgent[]>(this.agentUrl).pipe(
-      tap(data => console.log(JSON.stringify(data))),
+      tap(data => console.log(data.length)),
       catchError(this.handleError)
     );
   }

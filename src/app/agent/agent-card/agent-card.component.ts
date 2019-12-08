@@ -35,8 +35,7 @@ export class AgentCardComponent implements OnInit, OnDestroy {
     this.agentSvc.deleteAgentResource(resource, this.agent)
       .pipe(takeUntil(this.unsubscribe))
       .subscribe({
-        next: data => this.agent = data,
-        complete: () => console.log('deleteResource complete')
+        next: data => this.agent = data
       });
   }
 
@@ -60,8 +59,7 @@ export class AgentCardComponent implements OnInit, OnDestroy {
         this.agentSvc.addResource(this.resourceStr, this.agent)
           .pipe(takeUntil(this.unsubscribe))
           .subscribe({
-            next: data => this.agent = data,
-            complete: () => console.log('addResourceDialog complete')
+            next: data => this.agent = data
           });
       });
   }

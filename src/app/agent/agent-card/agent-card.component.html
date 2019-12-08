@@ -27,7 +27,7 @@
     </button>
   </div>
   <div class="action">
-    <button class="btn-deny">
+    <button class="btn-deny" *ngIf="agent.status !== 'idle'">
       <i class="icon-deny"></i>
       Deny
     </button>

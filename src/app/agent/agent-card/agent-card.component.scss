@@ -9,6 +9,11 @@
   background-color: white;
   margin-bottom: $agentSectionsGap;
   padding: 10px 0px;
+  @media (max-width: $deskTopMax) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 'info info info info info info'
+                          'resource resource resource resource resource action';
+  }
 }
 
 .server-img {
@@ -16,6 +21,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: $deskTopMax) {
+    display: none;
+  }
 }
 
 .info {
