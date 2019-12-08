@@ -10,9 +10,9 @@
   padding: 0 20px;
   display: flex;
   align-items: center;
-  color: $menuTextDefault;
+  color: $colorWhite;
   &:hover, &.active {
-    color: $menuItemHoverColor;
+    color: $btnColorPrimary;
   }
 }
 .menu-icon {
@@ -38,7 +38,7 @@
   }
   @media (max-width: $tabletMax) {
     position: absolute;
-    background-color: $menuBgColor;
+    background-color: $bgAside;
     height: 100%;
     z-index: 1;
     .action {
@@ -53,7 +53,7 @@
         right: 0px;
         cursor: pointer;
         &:hover {
-          background-color: $menuHoverBgColor;
+          background-color: $hoverBgAside;
         }
       }
     }

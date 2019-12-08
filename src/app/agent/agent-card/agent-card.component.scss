@@ -25,17 +25,24 @@
   place-items: center;
   font-size: 14px;
   justify-items: flex-start;
+  .info-item {
+    display: flex;
+    align-items: center;
+  }
+  .icon-font--sm {
+    margin: 0px 5px;
+  }
   .status {
     padding: .1rem .5rem;
-    color: $menuTextDefault;
+    color: $colorWhite;
     line-height: initial;
     margin-left: 10px;
   }
   .info-status-idle {
-    background-color: $greenColor;
+    background-color: $colorIdle;
   }
   .info-status-building {
-    background-color: $orangeColor;
+    background-color: $colorBuilding;
   }
 }
 
@@ -71,9 +78,9 @@
 }
 
 .button-resource-item {
-  background-color: $resourceBtnBgColor;
+  background-color: $colorLight;
 
   .btn-label, .btn-icon {
-    color: $btnColorCancelHover;
+    color: $bgAside;
   }
 }

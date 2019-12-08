@@ -9,7 +9,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'idle',
           type: 'physical',
           ip: '192.168.1.102',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -24,7 +24,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'building',
           type: 'virtual',
           ip: '192.168.1.80',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -39,7 +39,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'building',
           type: 'physical',
           ip: '192.168.1.117',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -54,7 +54,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'building',
           type: 'virtual',
           ip: '192.168.1.106',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -69,7 +69,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'idle',
           type: 'virtual',
           ip: '192.168.1.110',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -84,7 +84,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'idle',
           type: 'virtual',
           ip: '192.168.1.103',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -99,7 +99,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
           status: 'idle',
           type: 'physical',
           ip: '192.168.1.113',
-          location: '/var/lib/cruise-agent',
+          path: '/var/lib/cruise-agent',
           resources: [
             'Firefox',
             'Safari',
@@ -114,7 +114,7 @@ export class InMemoryAgentsService implements InMemoryDbService {
         status: 'idle',
         type: 'physical',
         ip: '192.168.1.116',
-        location: '/var/lib/cruise-agent',
+        path: '/var/lib/cruise-agent',
         resources: [
           'Firefox',
           'Safari',

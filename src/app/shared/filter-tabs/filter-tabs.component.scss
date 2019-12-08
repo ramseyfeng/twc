@@ -12,6 +12,7 @@
     border-right: 1px solid #F3F3F3;
     border-bottom: 3px solid #FFFFFF;
     &.active {
+      color: $btnColorPrimary;
       border-bottom: 3px solid $btnColorPrimary;
     }
   }

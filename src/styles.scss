@@ -60,10 +60,10 @@ button {
   }
 
   &.cancel-button {
-    background-color: $btnColorCancel;
+    background-color: $hoverBgAside;
 
     &:hover {
-      background-color: $btnColorCancelHover;
+      background-color: $bgAside;
     }
   }
 }
@@ -73,9 +73,9 @@ button {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, .3);
   border: 1px solid $btnColorPrimary;
   .btn-cancel {
-    background-color: $btnColorCancel;
+    background-color: $hoverBgAside;
     &:hover {
-      background-color: $btnColorCancelHover;
+      background-color: $bgAside;
     }
   }
   .title {

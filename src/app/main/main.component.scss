@@ -6,7 +6,7 @@
 }
 .sidebar {
   grid-area: sidebar;
-  background-color: $menuBgColor;
+  background-color: $bgAside;
   @media (max-width: $tabletMax) {
     display: none;
   }

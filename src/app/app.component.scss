@@ -8,15 +8,8 @@
 
 .main {
   grid-area: main;
-  background-color: $pageBgColor;
+  background-color: $bgContent;
 }
-
-/*.abs-sidebar {
-  position: absolute;
-  background-color: $menuBgColor;
-  width: $menuWidth;
-  height: 100%;
-}*/
 
 .footer {
   grid-area: footer;
@@ -27,6 +20,9 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  @media (max-width: $tabletMax) {
+    display: none;
+  }
 }
 
 .container {
@@ -39,6 +35,12 @@
     "header"
     "main"
     "footer";
+  @media (max-width: $tabletMax) {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-rows: $headerHeight 1fr;
+  }
 }
 
 .abs-sidebar {

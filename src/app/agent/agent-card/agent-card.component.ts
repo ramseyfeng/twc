@@ -13,6 +13,8 @@ import {IAgent} from '../agent';
 })
 export class AgentCardComponent implements OnInit, OnDestroy {
 
+  @Input() agent: IAgent;
+  resourceStr: string;
   private unsubscribe: Subject<void> = new Subject();
   osImages = {
     windows: '/assets/os-icons/windows.png',
@@ -21,14 +23,7 @@ export class AgentCardComponent implements OnInit, OnDestroy {
     suse: '/assets/os-icons/suse.png',
     centos: '/assets/os-icons/cent_os.png'
   };
-  public statusConstants = {
-    idle: {
-      class: 'class-idle'
-    }
-  };
 
-  @Input() agent: IAgent;
-  resourceStr: string;
 
   constructor(private agentSvc: AgentService, private dialog: MatDialog) {
   }
@@ -58,6 +53,9 @@ export class AgentCardComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed()
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(result => {
+        if (result === undefined) {
+          return;
+        }
         this.resourceStr = result;
         this.agentSvc.addResource(this.resourceStr, this.agent)
           .pipe(takeUntil(this.unsubscribe))

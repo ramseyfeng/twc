@@ -1,12 +1,21 @@
 <div class="wrapper">
   <div class="server-img">
-    <img [src]="osImages[agent.os]">
+    <img [src]="osImages[agent.os]" alt="os">
   </div>
   <div class="info">
-    <div class="info-name">{{agent.name}}</div>
-    <div class="status info-status-{{agent.status}}">{{agent.status}}</div>
-    <div class="info-ip">{{agent.ip}}</div>
-    <div class="info-path">{{agent.path}}</div>
+    <div class="info-item info-name">
+      <i class="icon-desktop icon-font--sm"></i>
+      <span>{{agent.name}}</span>
+    </div>
+    <div class="info-item status info-status-{{agent.status}}">{{agent.status}}</div>
+    <div class="info-item info-ip">
+      <i class="icon-info icon-font--sm"></i>
+      <span>{{agent.ip}}</span>
+    </div>
+    <div class="info-item info-path">
+      <i class="icon-folder icon-font--sm"></i>
+      <span>{{agent.path}}</span>
+    </div>
   </div>
   <div class="resource" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
     <button class="add-btn" (click)="addResourceDialog()">

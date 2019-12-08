@@ -1,8 +1,8 @@
 @import '../../styles/variables';
 .btn-cancel {
-  background-color: $btnColorCancel;
+  background-color: $hoverBgAside;
   &:hover {
-    background-color: $btnColorCancelHover;
+    background-color: $bgAside;
   }
 }
 .title {
@@ -12,7 +12,7 @@
     cursor: pointer;
     color: $btnColorPrimary;
     &:hover {
-      background-color: $resourceBtnBgColor;
+      background-color: $colorLight;
     }
   }
 }
@@ -24,6 +24,6 @@
   //font-size: 14px;
   border-radius: 3px;
   box-sizing: border-box;
-  border: 1px solid $silverColor;
+  border: 1px solid $colorSilver;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2) inset
 }

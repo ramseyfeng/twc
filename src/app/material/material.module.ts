@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {
-  MatButtonModule,
+  /*MatButtonModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
@@ -13,17 +13,17 @@ import {
   MatInputModule,
   MatDividerModule,
   MatCardModule,
-  MatButtonToggleModule,
+  MatButtonToggleModule,*/
   MatDialogModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 const materials = [
-  MatButtonModule,
+  HttpClientModule,
+  /*MatButtonModule,
   MatToolbarModule,
   MatIconModule,
   MatMenuModule,
-  HttpClientModule,
   MatSidenavModule,
   MatListModule,
   MatTabsModule,
@@ -33,7 +33,7 @@ const materials = [
   MatInputModule,
   MatDividerModule,
   MatCardModule,
-  MatButtonToggleModule,
+  MatButtonToggleModule,*/
   MatDialogModule
 ];
 

@@ -6,6 +6,6 @@
   <input class="input" [(ngModel)]="data.resources" placeholder="e.g. Chrome, FireFox">
 </div>
 <div mat-dialog-actions fxLayout="row" fxLayoutGap="20px">
-  <button [mat-dialog-close]="data.resources" cdkFocusInitial>Add Resources</button>
+  <button [mat-dialog-close]="data.resources">Add Resources</button>
   <button (click)="onNoClick()" class="btn-cancel">Cancel</button>
 </div>

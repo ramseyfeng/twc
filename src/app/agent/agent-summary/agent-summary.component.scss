@@ -36,7 +36,7 @@
       grid-area: status-label;
       font-size: 18px;
       font-weight: bold;
-      text-transform: uppercase;
+      text-transform: capitalize;
       top: 1rem;
       left: 1rem;
       color: white;
@@ -57,14 +57,14 @@
 .summary-status-idle {
   @include card-layout;
   .card-wrapper {
-    background-color: $greenColor;
+    background-color: $colorIdle;
   }
 }
 
 .summary-status-building {
   @include card-layout;
   .card-wrapper {
-    background-color: $orangeColor;
+    background-color: $colorBuilding;
   }
   .status-icon {
     @include animation-rotating;
