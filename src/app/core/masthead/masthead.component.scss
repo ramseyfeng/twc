@@ -1,5 +1,7 @@
-@import '../../styles/variables';
+@import '../../../styles';
+
 .masthead {
+  @include flex--center;
   max-width: 1200px;
   margin: 0px auto;
   .place-holder {

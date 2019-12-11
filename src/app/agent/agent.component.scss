@@ -1,4 +1,6 @@
-@import '../styles/variables';
+@import '../../assets/scss/partials/color.vars';
+@import '../../assets/scss/partials/size.vars';
+
 .list {
   grid-area: list;
 }

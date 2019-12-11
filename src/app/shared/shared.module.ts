@@ -6,18 +6,22 @@ import {MaterialModule} from '../material/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FilterTabsComponent} from './filter-tabs/filter-tabs.component';
 import {FilterIconsComponent} from './filter-icons/filter-icons.component';
+import {SidebarNavComponent} from './sidebar-nav/sidebar-nav.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
   declarations: [
     SearchTextInputComponent,
     FilterTabsComponent,
-    FilterIconsComponent
+    FilterIconsComponent,
+    SidebarNavComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule
   ],
   exports: [
     CommonModule,
@@ -26,7 +30,8 @@ import {FilterIconsComponent} from './filter-icons/filter-icons.component';
     FilterIconsComponent,
     FormsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SidebarNavComponent
   ]
 
 })

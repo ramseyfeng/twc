@@ -1,5 +1,9 @@
-@import 'app/styles/normalize';
-@import 'app/styles/variables';
+@import 'normalize';
+@import '_loading';
+@import 'partials/_color.vars';
+@import 'partials/size.vars';
+@import 'partials/utils';
+@import 'partials/flex-layout';
 
 .overflow-auto {
   overflow: auto;
@@ -15,13 +19,6 @@ body { margin: 0; font-family: cruise, "Helvetica Neue", sans-serif; }
 }
 .padding-1rem {
   padding: 1rem;
-}
-.margin-h-1rem {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.align-self-center {
-  align-self: center;
 }
 
 a {
@@ -54,7 +51,6 @@ button {
 
   &.deny-button {
     .icon-font {
-      font-size: 14px;
       margin-right: 8px;
     }
   }

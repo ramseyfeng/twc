@@ -1,5 +1,6 @@
-@import '../../styles/variables';
-@import '../../../styles';
+@import '../../../assets/scss/partials/color.vars';
+@import '../../../assets/scss/partials/size.vars';
+@import '../../../assets/scss/partials/utils';
 
 .nav-menu {
   padding: 0px;
