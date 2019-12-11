@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SearchTextInputComponent} from './search-text-input/search-text-input.component';
 import {FormsModule} from '@angular/forms';
-import {MaterialModule} from '../material/material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {FilterTabsComponent} from './filter-tabs/filter-tabs.component';
-import {FilterIconsComponent} from './filter-icons/filter-icons.component';
-import {SidebarNavComponent} from './sidebar-nav/sidebar-nav.component';
 import {RouterModule} from '@angular/router';
+import {SearchTextInputComponent} from './components/search-text-input/search-text-input.component';
+import {FilterIconsComponent} from './components/filter-icons/filter-icons.component';
+import {SidebarNavComponent} from './components/sidebar-nav/sidebar-nav.component';
+import {FilterTabsComponent} from './components/filter-tabs/filter-tabs.component';
+import {MaterialModule} from '../modules/material/material.module';
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import {RouterModule} from '@angular/router';
     FormsModule,
     MaterialModule,
     FlexLayoutModule,
-    SidebarNavComponent
+    SidebarNavComponent,
   ]
 
 })

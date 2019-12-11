@@ -1,26 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HelpComponent } from './help/help.component';
-import { DashBoardComponent } from './dash-board/dash-board.component';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryAgentsService} from './agent/in-memory-agents.service';
 import {SharedModule} from './shared/shared.module';
-import {AgentModule} from './agent/agent.module';
-import {MainModule} from './main/main.module';
-import { MyCruiseComponent } from './my-cruise/my-cruise.component';
+
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {CoreModule} from './core/core.module';
+import {MainModule} from './modules/main/main.module';
+import {AgentModule} from './modules/agent/agent.module';
+import {InMemoryAgentsService} from './core/mocks/in-memory-agents.service';
+import {MyCruiseModule} from './modules/my-cruise/my-cruise.module';
+import {HelpModule} from './modules/help/help.module';
+import {DashBoardModule} from './modules/dash-board/dash-board.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashBoardComponent,
-    HelpComponent,
-    DashBoardComponent,
-    MyCruiseComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,10 +27,13 @@ import {CoreModule} from './core/core.module';
     AgentModule,
     FlexLayoutModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryAgentsService),
-    CoreModule
+    CoreModule,
+    MyCruiseModule,
+    HelpModule,
+    DashBoardModule
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

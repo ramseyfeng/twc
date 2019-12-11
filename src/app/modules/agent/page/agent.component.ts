@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {IAgent} from './agent';
 import {takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
-import {AgentService} from './agent.service';
-import {ISummary} from './summary';
+import {ISummary} from '../../../shared/models/summary';
+import {IAgent} from '../../../shared/models/agent';
+import {AgentService} from '../../../core/services/agent.service';
 
 @Component({
   selector: 'app-agent',

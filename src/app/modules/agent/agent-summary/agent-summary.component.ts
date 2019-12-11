@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ISummary} from '../summary';
+import {ISummary} from '../../../shared/models/summary';
 
 @Component({
   selector: 'app-agent-summary',

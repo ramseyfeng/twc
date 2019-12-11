@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import {SharedModule} from '../shared/shared.module';
-import {AgentComponent} from './agent.component';
 import {AgentSummaryComponent} from './agent-summary/agent-summary.component';
 import {AgentListComponent} from './agent-list/agent-list.component';
 import {AgentCardComponent} from './agent-card/agent-card.component';
 import {AddResourceDialogComponent} from './add-resource-dialog/add-resource-dialog.component';
 import {StatisticsComponent} from './statistics/statistics.component';
+import {AgentComponent} from './page/agent.component';
+import {SharedModule} from '../../shared/shared.module';
+import {AgentRoutingModule} from './agent-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {StatisticsComponent} from './statistics/statistics.component';
   ],
   entryComponents: [AddResourceDialogComponent],
   imports: [
-    SharedModule
+    SharedModule,
+    AgentRoutingModule
   ]
 })
 export class AgentModule {}

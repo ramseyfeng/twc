@@ -1,10 +1,10 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {AgentService} from '../agent.service';
 import {MatDialog} from '@angular/material';
 import {AddResourceDialogComponent} from '../add-resource-dialog/add-resource-dialog.component';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {IAgent} from '../agent';
+import {IAgent} from '../../../shared/models/agent';
+import {AgentService} from '../../../core/services/agent.service';
 
 @Component({
   selector: 'app-agent-card',
