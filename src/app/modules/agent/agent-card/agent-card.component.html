@@ -1,23 +1,23 @@
-<div class="wrapper">
-  <div class="server-img">
+<div class="info info--{{agent.status}}">
+  <div class="info-img">
     <img [src]="osImages[agent.os]" alt="os">
   </div>
-  <div class="info">
-    <div class="info-item info-name">
-      <i class="icon-desktop icon-font--sm"></i>
-      <span>{{agent.name}}</span>
-    </div>
-    <div class="info-item status info-status-{{agent.status}}">{{agent.status}}</div>
-    <div class="info-item info-ip">
-      <i class="icon-info icon-font--sm"></i>
-      <span>{{agent.ip}}</span>
-    </div>
-    <div class="info-item info-path">
-      <i class="icon-folder icon-font--sm"></i>
-      <span>{{agent.path}}</span>
-    </div>
+  <!--  <div class="info">-->
+  <div class="info-item info-name">
+    <i class="icon-desktop icon-font--sm"></i>
+    <span>{{agent.name}}</span>
   </div>
-  <div class="resource" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+  <div class="info-item info-status info-status--{{agent.status}}">{{agent.status}}</div>
+  <div class="info-item info-ip">
+    <i class="icon-info icon-font--sm"></i>
+    <span>{{agent.ip}}</span>
+  </div>
+  <div class="info-item info-path">
+    <i class="icon-folder icon-font--sm"></i>
+    <span>{{agent.path}}</span>
+  </div>
+  <!--  </div>-->
+  <div class="info-resource" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
     <button class="add-btn" (click)="addResourceDialog()">
       <i class="icon-plus"></i>
     </button>
@@ -26,7 +26,7 @@
       <i class="btn-icon icon-trash"></i>
     </button>
   </div>
-  <div class="action">
+  <div class="info-action">
     <button class="btn-deny" *ngIf="agent.status !== 'idle'">
       <i class="icon-deny"></i>
       Deny

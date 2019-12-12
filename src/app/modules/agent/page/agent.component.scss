@@ -1,5 +1,5 @@
-@import '../../assets/scss/partials/color.vars';
-@import '../../assets/scss/partials/size.vars';
+@import 'partials/color.vars';
+@import 'partials/size.vars';
 
 .list {
   grid-area: list;
@@ -9,9 +9,6 @@
   background-color: $colorWhite;
   height: 50px;
 }
-/*.overview-item {
-  width: 270px;
-}*/
 .agent-container {
   grid-row-gap: $agentSectionsGap;
   display: grid;
@@ -20,7 +17,11 @@
     "overview"
     "toolbar"
     "list";
-  //place-content: space-around;
+}
+@media (max-width: $phoneMax) {
+  .agent-container {
+    grid-template-rows: 240px 100px 1fr;
+  }
 }
 .overview {
   grid-area: overview;
@@ -28,12 +29,45 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
-//.statistics {
-//  grid-area: statistics;
-//}
-
-/*@media (max-width: 1200px) {
+@media (max-width: $phoneMax) {
+  .overview {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". ."
+    "statistics statistics";
+  }
+}
+@media (max-width: $phoneMax) {
+  .statistics {
+    grid-area: statistics;
+  }
   .overview-item {
     flex: 0 1 230px;
   }
-}*/
+  .toolbar {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    height: 100%;
+    grid-template-areas: "toolbar__search"
+                          "toolbar__tabs";
+    &__tabs {
+      grid-area: toolbar__tabs;
+    }
+    &__search {
+      grid-area: toolbar__search;
+    }
+    &__icons {
+      display: none;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    &__search {
+      flex: 1 1 auto;
+    }
+  }
+}

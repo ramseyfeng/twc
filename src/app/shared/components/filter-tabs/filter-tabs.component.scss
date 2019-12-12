@@ -1,4 +1,5 @@
 @import 'partials/color.vars';
+@import 'partials/size.vars';
 
 .filter-tabs {
   .tab-item {
@@ -15,6 +16,13 @@
     &.active {
       color: $btnColorPrimary;
       border-bottom: 3px solid $btnColorPrimary;
+    }
+  }
+}
+@media (max-width: $phoneMax) {
+  .filter-tabs {
+    .tab-item {
+      flex: 1 1 auto;
     }
   }
 }

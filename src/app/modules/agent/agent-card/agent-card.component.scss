@@ -2,77 +2,58 @@
 @import 'partials/size.vars';
 @import 'partials/flex-layout';
 
-.wrapper {
+.info {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 100px repeat(5, auto);
   grid-template-rows: 55px auto;
-  grid-template-areas: 'server-img info info info info info info' 'server-img resource resource resource resource resource action';
+  grid-template-areas: 'info-img info-name info-status info-ip info-path' 'info-img resource resource resource action';
   background-color: white;
   margin-bottom: $agentSectionsGap;
-  padding: 10px 0px;
-  @media (max-width: $deskTopMax) {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: 'info info info info info info' 'resource resource resource resource resource action';
-  }
-}
-
-.server-img {
-  grid-area: server-img;
-  @include flex--center;
-  @media (max-width: $deskTopMax) {
-    display: none;
-  }
-}
-
-.info {
-  grid-area: info;
-  display: grid;
-  grid-template-columns: 1.3fr .7fr repeat(2, 1fr);
-  place-items: center;
   font-size: 14px;
+  place-items: center;
+  padding: 5px 5px;
   justify-items: flex-start;
 
-  .info-item {
+  &-item {
     display: flex;
     align-items: center;
+  }
+
+  &-img {
+    grid-area: info-img;
+    @include flex--center;
+  }
+
+  &-status {
+    grid-area: info-status;
+    padding: .1rem .5rem;
+    color: $colorWhite;
+    line-height: initial;
+    margin-left: 10px;
+
+    &--idle {
+      background-color: $colorIdle;
+    }
+
+    &--building {
+      background-color: $colorBuilding;
+    }
+  }
+
+  &-resource {
+    grid-area: resource;
+    flex-wrap: wrap;
+  }
+
+  &-action {
+    grid-area: action;
+    justify-self: flex-end;
   }
 
   .icon-font--sm {
     margin: 0px 5px;
   }
-
-  .status {
-    padding: .1rem .5rem;
-    color: $colorWhite;
-    line-height: initial;
-    margin-left: 10px;
-  }
-
-  .info-status-idle {
-    background-color: $colorIdle;
-  }
-
-  .info-status-building {
-    background-color: $colorBuilding;
-  }
 }
-
-.add-btn {
-  .icon-plus {
-    padding: 3px 4px;
-    font-size: 18px;
-  }
-}
-
-.resource {
-  grid-area: resource;
-  flex-wrap: wrap;
-}
-
-.action {
-  grid-area: action;
-}
-
 .btn-deny {
   height: 30px;
   background-color: #00B4CF;
@@ -83,16 +64,39 @@
     margin-right: .5rem;
   }
 }
-
-
 .icon-trash {
   font-size: 16px;
 }
-
 .button-resource-item {
   background-color: $colorLight;
 
   .btn-label, .btn-icon {
     color: $bgAside;
+  }
+}
+@media (max-width: $deskTopMax) {
+  .info-img {
+    display: none;
+  }
+  .info {
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas: 'info-name info-status info-ip info-path' 'resource resource resource action';
+  }
+}
+@media (max-width: $phoneMax) {
+  .info {
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas: 'info-name' 'info-ip' 'info-path' 'resource' 'action';
+  }
+  .info-status {
+    grid-area: unset;
+    display: none;
+  }
+  .info--building {
+    border-left: 3px solid $colorBuilding;
+  }
+  .info--idle {
+    border-left: 3px solid $colorIdle;
   }
 }
