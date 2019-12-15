@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SampleComponent} from './core/sample/sample.component';
+import {ModalService} from './core/services/modal.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'twc';
   sidebarMenus = [
     {
@@ -29,4 +32,14 @@ export class AppComponent {
       icon: 'icon-life-bouy'
     }
   ];
+
+  constructor(private modalService: ModalService) {}
+
+  ngOnInit(): void {
+    const inputs = {
+      isMobile: false
+    };
+    this.modalService.init(SampleComponent, inputs, {});
+  }
+
 }
