@@ -1,0 +1,29 @@
+@import 'partials/color.vars';
+@import 'partials/size.vars';
+.wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  .search-input {
+    background-color: $bgContent;
+    line-height: 1.5rem;
+    padding-left: 25px
+  }
+  .icon-search {
+    position: absolute;
+    padding: 5px;
+    font-size: 20px;
+    opacity: .5;
+  }
+}
+@media (max-width: $phoneMax) {
+  .wrapper {
+    position: relative;
+    margin-left: 0;
+    padding: 0 10px;
+    .search-input {
+      flex: 1 1 auto;
+    }
+  }
+}

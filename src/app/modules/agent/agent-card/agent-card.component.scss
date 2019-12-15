@@ -1,0 +1,102 @@
+@import 'partials/color.vars';
+@import 'partials/size.vars';
+@import 'partials/flex-layout';
+
+.info {
+  display: grid;
+  grid-template-columns: 100px repeat(5, auto);
+  grid-template-rows: 55px auto;
+  grid-template-areas: 'info-img info-name info-status info-ip info-path' 'info-img resource resource resource action';
+  background-color: white;
+  margin-bottom: $agentSectionsGap;
+  font-size: 14px;
+  place-items: center;
+  padding: 5px 5px;
+  justify-items: flex-start;
+
+  &-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &-img {
+    grid-area: info-img;
+    @include flex--center;
+  }
+
+  &-status {
+    grid-area: info-status;
+    padding: .1rem .5rem;
+    color: $colorWhite;
+    line-height: initial;
+    margin-left: 10px;
+
+    &--idle {
+      background-color: $colorIdle;
+    }
+
+    &--building {
+      background-color: $colorBuilding;
+    }
+  }
+
+  &-resource {
+    grid-area: resource;
+    flex-wrap: wrap;
+  }
+
+  &-action {
+    grid-area: action;
+    justify-self: flex-end;
+  }
+
+  .icon-font--sm {
+    margin: 0px 5px;
+  }
+}
+.btn-deny {
+  height: 30px;
+  background-color: #00B4CF;
+  color: white;
+
+  .icon-deny {
+    font-size: 14px;
+    margin-right: .5rem;
+  }
+}
+.icon-trash {
+  font-size: 16px;
+}
+.button-resource-item {
+  background-color: $colorLight;
+
+  .btn-label, .btn-icon {
+    color: $bgAside;
+  }
+}
+@media (max-width: $deskTopMax) {
+  .info-img {
+    display: none;
+  }
+  .info {
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas: 'info-name info-status info-ip info-path' 'resource resource resource action';
+  }
+}
+@media (max-width: $phoneMax) {
+  .info {
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas: 'info-name' 'info-ip' 'info-path' 'resource' 'action';
+  }
+  .info-status {
+    grid-area: unset;
+    display: none;
+  }
+  .info--building {
+    border-left: 3px solid $colorBuilding;
+  }
+  .info--idle {
+    border-left: 3px solid $colorIdle;
+  }
+}

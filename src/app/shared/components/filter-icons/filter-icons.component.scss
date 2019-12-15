@@ -1,0 +1,11 @@
+@import 'partials/color.vars';
+.wrapper {
+  height: 100%;
+  .filter-icon {
+    padding: 10px;
+    cursor: pointer;
+    &.active {
+      color: $btnColorPrimary;
+    }
+  }
+}

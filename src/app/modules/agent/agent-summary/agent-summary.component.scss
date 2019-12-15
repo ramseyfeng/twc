@@ -1,0 +1,72 @@
+@import 'partials/color.vars';
+
+@mixin animation-rotating {
+  animation-name: rotating;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  transform-origin: center;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin card-layout {
+  position: relative;
+  .absolute {
+    .status-icon {
+      position: absolute;
+      font-size: 144px;
+      color: rgba(255, 255, 255, 0.2)
+    }
+  }
+  .card-wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'status-label .' '. status-count';
+    .status-label {
+      grid-area: status-label;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: capitalize;
+      top: 1rem;
+      left: 1rem;
+      color: white;
+      padding-top: 1rem;
+      padding-left: 1rem;
+    }
+    .status-count {
+      grid-area: status-count;
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+      place-self: end;
+      padding-right: 10px;
+    }
+  }
+}
+
+.summary-status-idle {
+  @include card-layout;
+  .card-wrapper {
+    background-color: $colorIdle;
+  }
+}
+
+.summary-status-building {
+  @include card-layout;
+  .card-wrapper {
+    background-color: $colorBuilding;
+  }
+  .status-icon {
+    @include animation-rotating;
+  }
+}
